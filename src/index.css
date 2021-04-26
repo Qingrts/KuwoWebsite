@@ -87,3 +87,8 @@ h3.title{
 a{
   color: #333;
 }
+.container{
+  width: 1288px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
