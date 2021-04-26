@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { HashRouter, Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Index from "./components/index";
+import Down from "./components/down";
+import Listen from "./components/listen";
+
+import Header from "./components/comComponent/header";
+import Footer from "./components/comComponent/footer";
+
+
+export default class App extends React.Component{
+  constructor(props)　{
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+    return <HashRouter>
+      <Header/>
+      <Switch>
+        <Route path="/down" component={Down}/>
+        <Route path="/listen" component={Listen}/>
+        <Route path="" component={Index}/>
+      </Switch>
+      <Footer/>
+    </HashRouter>
+  }
 }
-
-export default App;
